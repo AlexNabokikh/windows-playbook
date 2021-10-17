@@ -1,6 +1,6 @@
 ---
 remove_desktop_icons: true
-configure_hostname: false
+configure_hostname: true
 configure_explorer: true
 configure_taskbar: true
 custom_hostname: vagrantbox
