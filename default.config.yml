@@ -1,6 +1,9 @@
 ---
-configure_hostname: true
-custom_hostname: hydra-test2
+remove_desktop_icons: true
+configure_hostname: false
+configure_explorer: true
+configure_taskbar: true
+custom_hostname: vagrantbox
 
 choco_installed_packages:
   - 7zip

@@ -1,0 +1,4 @@
+- name: Ensure Desktop items are removed.
+  ansible.windows.win_powershell:
+    script: |
+      Remove-Item 'C:\Users\* \Desktop\*'

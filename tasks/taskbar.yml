@@ -1,0 +1,26 @@
+- name: Ensure 'Search' unpinned from Taskbar.
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Search
+    name: SearchboxTaskbarMode
+    data: 0
+    type: dword
+
+- name: Ensure 'Task View' unpinned from Taskbar.
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    name: ShowTaskViewButton
+    data: 0
+    type: dword
+
+- name: Ensure 'Chat' unpinned from Taskbar.
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    name: TaskbarMn
+    data: 0
+    type: dword
+
+- name: Ensure Taskbar items are removed.
+  ansible.windows.win_powershell:
+    script: |
+      $Shortcuts = Get-ChildItem -Recurse "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar" -Include *.lnk
+      Remove-Item $Shortcuts

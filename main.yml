@@ -17,3 +17,12 @@
     - import_tasks: tasks/hostname.yml
       when: configure_hostname
       tags: ["hostname"]
+    - import_tasks: tasks/desktop.yml
+      when: remove_desktop_icons
+      tags: ["desktop"]
+    - import_tasks: tasks/explorer.yml
+      when: configure_explorer
+      tags: ["explorer"]
+    - import_tasks: tasks/taskbar.yml
+      when: configure_taskbar
+      tags: ["taskbar"]
