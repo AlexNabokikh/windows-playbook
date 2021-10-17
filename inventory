@@ -1,0 +1,2 @@
+[win]
+192.168.222.68  ansible_connection=ssh ansible_shell_type=cmd ansible_user=Vagrant ansible_password=vagrant

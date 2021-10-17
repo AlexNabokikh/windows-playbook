@@ -1,0 +1,9 @@
+---
+- name: Ensure configured hostname set.
+  ansible.windows.win_hostname:
+    name: "{{ custom_hostname }}"
+  register: restart
+
+- name: Ensure new hostname applied (Reboot).
+  ansible.windows.win_reboot:
+  when: restart.reboot_required

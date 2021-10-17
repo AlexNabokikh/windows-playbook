@@ -1,0 +1,28 @@
+---
+configure_hostname: true
+custom_hostname: hydra-test2
+
+choco_installed_packages:
+  - 7zip
+  - adobereader
+  - auto-dark-mode
+  - awscli
+  - capture2text
+  - choco-cleaner
+  - choco-upgrade-all-at-startup
+  - Firefox
+  - git
+  - golang
+  - jre8
+  - kubernetes-cli
+  - microsoft-windows-terminal
+  - nmap
+  - powertoys
+  - python3
+  - rufus
+  - telegram
+  - terraform
+  - vlc
+  - vscode
+  - winmtr-redux
+  - zoom

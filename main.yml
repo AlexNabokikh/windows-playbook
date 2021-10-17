@@ -1,0 +1,19 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ["always"]
+
+  tasks:
+    - import_tasks: tasks/chocolatey.yml
+      tags: ["choco"]
+    - import_tasks: tasks/hostname.yml
+      when: configure_hostname
+      tags: ["hostname"]
