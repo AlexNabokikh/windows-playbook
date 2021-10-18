@@ -27,6 +27,11 @@ choco_installed_packages:
   - vscode
   - zoom
 
+install_fonts: true
+installed_nerdfonts:
+  - FiraCode
+  - FantasqueSansMono
+
 # List of valid distributions that can be installed:
 # wsl-alpine
 # wsl-archlinux

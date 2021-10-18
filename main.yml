@@ -29,3 +29,6 @@
     - import_tasks: tasks/hostname.yml
       when: configure_hostname
       tags: ["hostname"]
+    - import_tasks: tasks/fonts.yml
+      when: install_fonts
+      tags: ["fonts"]
