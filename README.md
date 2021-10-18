@@ -88,3 +88,9 @@ This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nab
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
 [link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
 [badge-os-version]: https://img.shields.io/badge/OS-Windows%2011-blue
+
+## License
+
+This software is available under the following licenses:
+
+  * **MIT**
