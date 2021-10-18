@@ -1,8 +1,8 @@
 ---
-remove_desktop_icons: true
-configure_hostname: true
+remove_desktop_icons: false
 configure_explorer: true
 configure_taskbar: true
+configure_hostname: false
 custom_hostname: vagrantbox
 
 choco_installed_packages:
