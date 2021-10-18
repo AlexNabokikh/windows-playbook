@@ -12,7 +12,7 @@ This playbook installs and configures most of the software I use on my Windows 1
 
 ### Prepare your Windows host ⏲
 
-**This playbook tested for Windows 10/11 Professional and Enterprise editions. Other versions are not supported yet**
+#### **This playbook tested for Windows 10 2004 and higher and Windows 11 21H2 (Pro, Ent). Other versions are not supported yet**
 
 Copy and paste the code below into your PowerShell terminal to get your Windows machine ready to work with Ansible.
 
@@ -73,15 +73,12 @@ Packages (installed with Chocolatey):
 - jre8
 - kubernetes-cli
 - microsoft-windows-terminal
-- nmap
 - powertoys
 - python3
-- rufus
 - telegram
 - terraform
 - vlc
 - vscode
-- winmtr-redux
 - zoom
 
 ## Author
@@ -92,7 +89,7 @@ This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nab
 
 This software is available under the following licenses:
 
-  - **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
+- **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
 
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
 [link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI

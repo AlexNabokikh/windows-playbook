@@ -3,7 +3,7 @@ remove_desktop_icons: false
 configure_explorer: true
 configure_taskbar: true
 configure_hostname: false
-custom_hostname: vagrantbox
+custom_hostname: windows-ansible
 
 choco_installed_packages:
   - 7zip
@@ -19,13 +19,24 @@ choco_installed_packages:
   - jre8
   - kubernetes-cli
   - microsoft-windows-terminal
-  - nmap
   - powertoys
   - python3
-  - rufus
   - telegram
   - terraform
   - vlc
   - vscode
-  - winmtr-redux
   - zoom
+
+# List of valid distributions that can be installed:
+# wsl-alpine
+# wsl-archlinux
+# wsl-debiangnulinux
+# wsl-fedoraremix
+# wsl-kalilinux
+# wsl-opensuse
+# wsl-sles
+# wsl-ubuntu-1604
+# wsl-ubuntu-1804
+# wsl-ubuntu-2004
+install_wsl2: true
+wsl2_distribution: wsl-ubuntu-2004
