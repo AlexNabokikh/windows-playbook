@@ -1,6 +1,6 @@
 # Windows Ansible Playbook
 
-![CI workflow](https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg)
+[![CI][badge-gh-actions]][link-gh-actions]
 
 This playbook installs and configures most of the software I use on my Windows 11 machine for software development.
 
@@ -81,3 +81,6 @@ Packages (installed with Chocolatey):
 ## Author
 
 This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nabokih/) (originally inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)).
+
+[badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
+[link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
