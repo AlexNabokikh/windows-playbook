@@ -26,12 +26,12 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 2. Clone or download this repository to your local drive.
 3. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible collections.
-4. Add IP address and credentials of your Windows machine into `inventory` file
+4. Add the IP address and credentials of your Windows machine into the `inventory` file
 5. Run `ansible-playbook main.yml` inside this directory.
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `choco`, `desktop`, `explorer`, `taskbar`, `hostname`.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco`, `desktop`, `explorer`, `taskbar`, `hostname`.
 
 ```sh
 ansible-playbook main.yml --tags "choco,explorer"
@@ -50,7 +50,7 @@ choco_installed_packages:
 
 ## Included Applications / Configuration (Default)
 
-Packages (installed with Homebrew):
+Packages (installed with Chocolatey):
 
 - 7zip
 - adobereader
