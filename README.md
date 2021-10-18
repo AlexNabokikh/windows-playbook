@@ -11,6 +11,8 @@ This playbook installs and configures most of the software I use on my Windows 1
 
 ### Prepare your Windows host ⏲
 
+**This playbook tested for Windows 10/11 Professional and Enterprise editions. Other versions are not supported yet**
+
 Copy and paste the code below into your PowerShell terminal to get your Windows machine ready to work with Ansible.
 
 ```powershell
@@ -93,4 +95,4 @@ This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nab
 
 This software is available under the following licenses:
 
-  * **MIT**
+  * **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
