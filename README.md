@@ -1,6 +1,6 @@
 # Windows Ansible Playbook
 
-[![CI][badge-gh-actions]][link-gh-actions]
+![CI workflow](https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg)
 
 This playbook installs and configures most of the software I use on my Windows 11 machine for software development.
 
