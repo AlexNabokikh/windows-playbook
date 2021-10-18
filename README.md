@@ -1,5 +1,7 @@
 # Windows Ansible Playbook
 
+[![CI][badge-gh-actions]][link-gh-actions]
+
 This playbook installs and configures most of the software I use on my Windows 11 machine for software development.
 
 ## Installation
