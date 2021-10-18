@@ -45,7 +45,7 @@ You can override any of the defaults configured in `default.config.yml` by creat
 choco_installed_packages:
   - googlechrome
   - git
-  - go
+  - golang
 ```
 
 ## Included Applications / Configuration (Default)
