@@ -8,12 +8,12 @@ else {
 }
 
 # Ensure OpenSSH Server installed
-if ([bool](Get-Service -Name sshd)) {
+if ([bool](Get-Service -Name sshd -ErrorAction SilentlyContinue)) {
     Write-Verbose "OpenSSH is already installed, skip installation." -Verbose
 }
 else {
     Write-Verbose "Installing OpenSSH..." -Verbose
-    $openSSHpackages = Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+    $openSSHpackages = Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*' | Select-Object -ExpandProperty Name
 
     foreach ($package in $openSSHpackages) {
         Add-WindowsCapability -Online -Name $package
@@ -34,4 +34,3 @@ else {
         Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
     }
 }
-
