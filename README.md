@@ -3,7 +3,8 @@
 # Windows Ansible Playbook
 
 [![CI][badge-gh-actions]][link-gh-actions]
-![badge-os-version]
+![badge-windows-10]
+![badge-windows-11]
 
 This playbook installs and configures most of the software I use on my Windows 11 machine for software development.
 
@@ -87,12 +88,13 @@ Packages (installed with Chocolatey):
 
 This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nabokih/) (originally inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)).
 
-[badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
-[link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
-[badge-os-version]: https://img.shields.io/badge/OS-Windows%2011-blue
-
 ## License
 
 This software is available under the following licenses:
 
-  * **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
+  - **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
+
+[badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
+[link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
+[badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011-blue
+[badge-windows-10]: https://img.shields.io/badge/OS-Windows%2010-blue
