@@ -1,3 +1,4 @@
+---
 - name: Ensure 'Search' unpinned from Taskbar.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Search

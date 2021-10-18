@@ -2,6 +2,6 @@
 - name: Ensure configured Chocolatey packages are installed.
   win_chocolatey:
     name: "{{ item.name | default(item) }}"
-    ignore_checksums: yes
+    ignore_checksums: true
     state: present
   loop: "{{ choco_installed_packages }}"
