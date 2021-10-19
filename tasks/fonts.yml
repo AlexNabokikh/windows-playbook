@@ -16,7 +16,7 @@
 
 - name: Download fonts
   win_get_url:
-    url: "{{ item.browser_download_url }}"
+    url: '{{ item.browser_download_url }}'
     dest: '{{ ansible_env["TEMP"] }}\{{ item.name }}'
   loop: '{{ font_dl_urls }}'
   throttle: 1
@@ -56,7 +56,7 @@
       Write-Output "change made"
     }
   register: _fontinstall_command
-  changed_when: "'change made' in _fontinstall_command.stdout"
-  loop: "{{ font_files.results | map(attribute='files') | flatten }}"
+  changed_when: '"change made" in _fontinstall_command.stdout'
+  loop: '{{ font_files.results | map(attribute="files") | flatten }}'
   loop_control:
-    label: "{{ item.filename }}"
+    label: '{{ item.filename }}'
