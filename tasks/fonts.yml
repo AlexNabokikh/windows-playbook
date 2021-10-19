@@ -7,7 +7,11 @@
 
 - name: Get font download URLs
   set_fact:
-    font_dl_urls: "{{ font_dl_urls | default([]) + nerdfonts_release.json.assets | selectattr('name', 'equalto', item ~ '.zip' ) }}"
+    font_dl_urls: >
+      {{
+      font_dl_urls | default([]) + nerdfonts_release.json.assets |
+      selectattr('name', 'equalto', item ~ '.zip')
+      }}
   loop: '{{ installed_nerdfonts }}'
 
 - name: Download fonts
@@ -31,7 +35,7 @@
 - name: Find font files in extracted archive
   win_find:
     paths: '{{ ansible_env["TEMP"] }}\{{ item.name }}-unzip'
-    patterns: [ '*.ttf' ]
+    patterns: ['*.ttf']
   loop: '{{ font_dl_urls }}'
   register: font_files
   loop_control:
@@ -39,12 +43,16 @@
 
 - name: Install fonts
   win_shell: |
-    $SystemFontsFolder = (New-Object -ComObject Shell.Application).Namespace(0x14)
-    $targetPath = Join-Path "${env:LocalAppData}\Microsoft\Windows\Fonts" -ChildPath '{{ item.filename }}'
+    $FontsFolder = (New-Object -ComObject Shell.Application).Namespace(0x14)
+    $JoinPathArgs = @{
+      'Path' = "${env:LocalAppData}\Microsoft\Windows\Fonts"
+      'ChildPath' = '{{ item.filename }}'
+    }
+    $targetPath = Join-Path @JoinPathArgs
     # So, see if target exists...
     if (-not (Test-Path $targetPath)) {
-      #install the font.
-      $SystemFontsFolder.CopyHere('{{ item.path }}')
+      # Install the font.
+      $FontsFolder.CopyHere('{{ item.path }}')
       Write-Output "change made"
     }
   register: _fontinstall_command
@@ -52,4 +60,3 @@
   loop: "{{ font_files.results | map(attribute='files') | flatten }}"
   loop_control:
     label: "{{ item.filename }}"
-
