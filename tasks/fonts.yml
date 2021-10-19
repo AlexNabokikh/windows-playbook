@@ -1,0 +1,62 @@
+---
+- name: Find latest Nerd Fonts release
+  win_uri:
+    url: https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest
+    return_content: true
+  register: nerdfonts_release
+
+- name: Get font download URLs
+  set_fact:
+    font_dl_urls: >
+      {{
+      font_dl_urls | default([]) + nerdfonts_release.json.assets |
+      selectattr('name', 'equalto', item ~ '.zip')
+      }}
+  loop: '{{ installed_nerdfonts }}'
+
+- name: Download fonts
+  win_get_url:
+    url: '{{ item.browser_download_url }}'
+    dest: '{{ ansible_env["TEMP"] }}\{{ item.name }}'
+  loop: '{{ font_dl_urls }}'
+  throttle: 1
+  loop_control:
+    label: '{{ item.name }}'
+
+- name: Extract fonts
+  win_unzip:
+    src: '{{ ansible_env["TEMP"] }}\{{ item.name }}'
+    dest: '{{ ansible_env["TEMP"] }}\{{ item.name }}-unzip'
+    creates: '{{ ansible_env["TEMP"] }}\{{ item.name }}-unzip'
+  loop: '{{ font_dl_urls }}'
+  loop_control:
+    label: '{{ item.name }}'
+
+- name: Find font files in extracted archive
+  win_find:
+    paths: '{{ ansible_env["TEMP"] }}\{{ item.name }}-unzip'
+    patterns: ['*.ttf']
+  loop: '{{ font_dl_urls }}'
+  register: font_files
+  loop_control:
+    label: '{{ item.name }}'
+
+- name: Install fonts
+  win_shell: |
+    $FontsFolder = (New-Object -ComObject Shell.Application).Namespace(0x14)
+    $JoinPathArgs = @{
+      'Path' = "${env:LocalAppData}\Microsoft\Windows\Fonts"
+      'ChildPath' = '{{ item.filename }}'
+    }
+    $targetPath = Join-Path @JoinPathArgs
+    # So, see if target exists...
+    if (-not (Test-Path $targetPath)) {
+      # Install the font.
+      $FontsFolder.CopyHere('{{ item.path }}')
+      Write-Output "change made"
+    }
+  register: _fontinstall_command
+  changed_when: '"change made" in _fontinstall_command.stdout'
+  loop: '{{ font_files.results | map(attribute="files") | flatten }}'
+  loop_control:
+    label: '{{ item.filename }}'
