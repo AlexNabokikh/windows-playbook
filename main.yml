@@ -20,18 +20,24 @@
     - import_tasks: tasks/wsl2.yml
       when: install_wsl2
       tags: ["wsl"]
-    - import_tasks: tasks/desktop.yml
-      when: remove_desktop_icons
-      tags: ["desktop"]
+    - import_tasks: tasks/fonts.yml
+      when: install_fonts
+      tags: ["fonts"]
     - import_tasks: tasks/explorer.yml
       when: configure_explorer
       tags: ["explorer"]
     - import_tasks: tasks/taskbar.yml
       when: configure_taskbar
       tags: ["taskbar"]
+    - import_tasks: tasks/sounds.yml
+      when: set_sound_scheme
+      tags: ["sounds"]
+    - import_tasks: tasks/mouse.yml
+      when: disable_mouse_acceleration
+      tags: ["mouse"]
+    - import_tasks: tasks/desktop.yml
+      when: remove_desktop_icons
+      tags: ["desktop"]
     - import_tasks: tasks/hostname.yml
       when: configure_hostname
       tags: ["hostname"]
-    - import_tasks: tasks/fonts.yml
-      when: install_fonts
-      tags: ["fonts"]

@@ -6,16 +6,20 @@
     data: 0
     type: dword
 
-- name: Ensure 'Task View' unpinned from Taskbar.
+- name: Ensure Task View, Chat and Cortana are unpinned from Taskbar.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-    name: ShowTaskViewButton
+    name: "{{ item }}"
     data: 0
     type: dword
+  loop:
+    - ShowTaskViewButton
+    - TaskbarMn
+    - ShowCortanaButton
 
-- name: Ensure 'Chat' unpinned from Taskbar.
+- name: Ensure 'News and Interests' unpinned from Taskbar.
   ansible.windows.win_regedit:
-    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-    name: TaskbarMn
-    data: 0
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds
+    name: ShellFeedsTaskbarViewMode
+    data: 2
     type: dword
