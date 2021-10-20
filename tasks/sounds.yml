@@ -1,0 +1,14 @@
+---
+- name: Ensure sound scheme set to 'No sounds'.
+  ansible.windows.win_powershell:
+    script: |
+      $Path = "HKCU:\AppEvents\Schemes"
+      $Keyname = "(Default)"
+      $SetValue = ".None"
+
+      New-itemProperty -path $Path -Name $keyname -value $SetValue -force
+      Get-ChildItem -Path "HKCU:\AppEvents\Schemes\Apps" |
+      Get-ChildItem |
+      Get-ChildItem |
+      Where-Object { $_.PSChildName -eq ".Current" } |
+      Set-ItemProperty -Name "(Default)" -Value ""
