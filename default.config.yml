@@ -1,9 +1,11 @@
 ---
-remove_desktop_icons: false
 configure_explorer: true
-configure_taskbar: true
 configure_hostname: false
 custom_hostname: windows-ansible
+configure_taskbar: true
+disable_mouse_acceleration: true
+remove_desktop_icons: false
+set_sound_scheme: true
 
 choco_installed_packages:
   - 7zip
