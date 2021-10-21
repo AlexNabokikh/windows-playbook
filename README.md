@@ -12,6 +12,7 @@ This playbook installs and configures most of the software I use on my Windows 1
 Capabilities:
 
 - Installs software via Chocolatey
+- Installs security, critical, and rollup Windows updates
 - Removes Bloatware
 - Enables and installs WSL2
 - Downloads and installs custom fonts
