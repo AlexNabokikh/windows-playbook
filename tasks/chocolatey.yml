@@ -6,7 +6,7 @@
     state: present
   loop: "{{ choco_installed_packages }}"
 
-- name: Upgrade installed packages.
+- name: Upgrade installed Chocolatey packages.
   win_chocolatey:
     name: all
     state: latest
