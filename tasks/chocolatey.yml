@@ -5,3 +5,8 @@
     ignore_checksums: true
     state: present
   loop: "{{ choco_installed_packages }}"
+
+- name: Upgrade installed packages.
+  win_chocolatey:
+    name: all
+    state: latest
