@@ -4,6 +4,7 @@ configure_hostname: false
 custom_hostname: windows-ansible
 configure_taskbar: true
 disable_mouse_acceleration: true
+install_windows_updates: true
 remove_desktop_icons: false
 set_sound_scheme: true
 
