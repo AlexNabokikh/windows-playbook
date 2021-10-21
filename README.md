@@ -5,6 +5,7 @@
 [![CI][badge-gh-actions]][link-gh-actions]
 ![badge-windows-10]
 ![badge-windows-11]
+![badge-license]
 
 This playbook installs and configures most of the software I use on my Windows 11 machine for software development.
 
@@ -25,7 +26,7 @@ Capabilities:
 
 ### Prepare your Windows host ⏲
 
-#### **This playbook tested for Windows 10 2004 and higher and Windows 11 21H2 (Pro, Ent). Other versions are not supported yet**
+#### **This playbook was tested on Windows 10 2004 and Windows 11 21H2 (Pro, Ent). Other versions may work but have not tried.**
 
 Copy and paste the code below into your PowerShell terminal to get your Windows machine ready to work with Ansible.
 
@@ -120,5 +121,6 @@ This software is available under the following licenses:
 
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
 [link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
-[badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011-blue
-[badge-windows-10]: https://img.shields.io/badge/OS-Windows%2010-blue
+[badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011%2021H2-blue
+[badge-windows-10]: https://img.shields.io/badge/OS-Windows%2010%2020H2-blue
+[badge-license]: https://img.shields.io/badge/License-MIT-informational
