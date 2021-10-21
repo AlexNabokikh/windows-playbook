@@ -5,14 +5,28 @@
 [![CI][badge-gh-actions]][link-gh-actions]
 ![badge-windows-10]
 ![badge-windows-11]
+![badge-license]
 
 This playbook installs and configures most of the software I use on my Windows 11 machine for software development.
+
+Capabilities:
+
+- Installs software via Chocolatey
+- Removes Bloatware
+- Enables and installs WSL2
+- Downloads and installs custom fonts
+- Configures Explorer
+- Configures Taskbar
+- Sets sound scheme to 'No sounds'
+- Disables mouse acceleration
+- Sets hostname
+- Removes icons from the Desktop
 
 ## Installation
 
 ### Prepare your Windows host ⏲
 
-#### **This playbook tested for Windows 10 2004 and higher and Windows 11 21H2 (Pro, Ent). Other versions are not supported yet**
+#### **This playbook was tested on Windows 10 2004 and Windows 11 21H2 (Pro, Ent). Other versions may work but have not tried.**
 
 Copy and paste the code below into your PowerShell terminal to get your Windows machine ready to work with Ansible.
 
@@ -39,21 +53,35 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco`, `desktop`, `explorer`, `taskbar`, `hostname`.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco`, `debloat`, `desktop`, `explorer`, `fonts`, `hostname`, `mouse`, `sounds`, `taskbar`, `wsl`.
 
 ```sh
-ansible-playbook main.yml --tags "choco,explorer"
+ansible-playbook main.yml --tags "choco,wsl"
 ```
 
 ## Overriding Defaults
 
-You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
+You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and enable/disable specific tasks with something like:
 
 ```yaml
+configure_hostname: true
+custom_hostname: myhostname
+
 choco_installed_packages:
   - googlechrome
   - git
   - golang
+
+install_fonts: true
+installed_nerdfonts:
+  - Meslo
+
+install_wsl2: true
+wsl2_distribution: wsl-archlinux
+
+remove_bloatware: true
+bloatware:
+  - Microsoft.Messaging
 ```
 
 ## Included Applications / Configuration (Default)
@@ -93,5 +121,6 @@ This software is available under the following licenses:
 
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
 [link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
-[badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011-blue
-[badge-windows-10]: https://img.shields.io/badge/OS-Windows%2010-blue
+[badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011%2021H2-blue
+[badge-windows-10]: https://img.shields.io/badge/OS-Windows%2010%2020H2-blue
+[badge-license]: https://img.shields.io/badge/License-MIT-informational
