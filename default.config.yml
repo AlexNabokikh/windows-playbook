@@ -23,6 +23,9 @@ update_categories:
   # - Updates
   # - Upgrades
 
+change_power_plan: true
+power_plan: "high performance"
+
 choco_installed_packages:
   - 7zip
   - adobereader

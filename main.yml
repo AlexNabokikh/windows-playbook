@@ -51,6 +51,10 @@
       when: disable_mouse_acceleration
       tags: ["mouse"]
 
+    - import_tasks: tasks/power_plan.yml
+      when: change_power_plan
+      tags: ["power"]
+
     - import_tasks: tasks/desktop.yml
       when: remove_desktop_icons
       tags: ["desktop"]
