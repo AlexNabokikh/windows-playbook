@@ -35,6 +35,11 @@ installed_nerdfonts:
   - FiraCode
   - FantasqueSansMono
 
+# List of features: "Get-WindowsOptionalFeature -Online"
+install_windows_features: false
+windows_features:
+  - "Microsoft-Hyper-V": true
+
 # List of valid distributions that can be installed:
 # wsl-alpine
 # wsl-archlinux

@@ -23,6 +23,10 @@
     - import_tasks: tasks/chocolatey.yml
       tags: ["choco"]
 
+    - import_tasks: tasks/windows_features.yml
+      when: install_windows_features
+      tags: ["windows_features"]
+
     - import_tasks: tasks/wsl2.yml
       when: install_wsl2
       tags: ["wsl"]

@@ -11,17 +11,18 @@ This playbook installs and configures most of the software I use on my Windows 1
 
 Capabilities:
 
-- Installs software via Chocolatey
-- Installs security, critical, and rollup Windows updates
-- Removes Bloatware
-- Enables and installs WSL2
-- Downloads and installs custom fonts
-- Configures Explorer
-- Configures Taskbar
-- Sets sound scheme to 'No sounds'
-- Disables mouse acceleration
-- Sets hostname
-- Removes icons from the Desktop
+* Installs software via Chocolatey
+* Installs security, critical, and rollup Windows updates
+* Installs Optional Windows Features
+* Removes Bloatware
+* Enables and installs WSL2
+* Downloads and installs custom fonts
+* Configures Explorer
+* Configures Taskbar
+* Sets sound scheme to 'No sounds'
+* Disables mouse acceleration
+* Sets hostname
+* Removes icons from the Desktop
 
 ## Installation
 
@@ -54,7 +55,7 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco`, `debloat`, `desktop`, `explorer`, `fonts`, `hostname`, `mouse`, `sounds`, `taskbar`, `wsl`.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`  `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `sounds` , `taskbar` , `wsl` .
 
 ```sh
 ansible-playbook main.yml --tags "choco,wsl"
@@ -77,6 +78,10 @@ install_fonts: true
 installed_nerdfonts:
   - Meslo
 
+install_windows_features: true
+windows_features:
+  Microsoft-Hyper-V: true
+
 install_wsl2: true
 wsl2_distribution: wsl-archlinux
 
@@ -89,26 +94,26 @@ bloatware:
 
 Packages (installed with Chocolatey):
 
-- 7zip
-- adobereader
-- auto-dark-mode
-- awscli
-- capture2text
-- choco-cleaner
-- choco-upgrade-all-at-startup
-- Firefox
-- git
-- golang
-- jre8
-- kubernetes-cli
-- microsoft-windows-terminal
-- powertoys
-- python3
-- telegram
-- terraform
-- vlc
-- vscode
-- zoom
+* 7zip
+* adobereader
+* auto-dark-mode
+* awscli
+* capture2text
+* choco-cleaner
+* choco-upgrade-all-at-startup
+* Firefox
+* git
+* golang
+* jre8
+* kubernetes-cli
+* microsoft-windows-terminal
+* powertoys
+* python3
+* telegram
+* terraform
+* vlc
+* vscode
+* zoom
 
 ## Author
 
@@ -118,7 +123,7 @@ This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nab
 
 This software is available under the following licenses:
 
-- **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
+* **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
 
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/ci.yml/badge.svg?event=push
 [link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
