@@ -19,6 +19,7 @@ Capabilities:
 * Downloads and installs custom fonts
 * Configures Explorer
 * Configures Taskbar
+* Configures power plan
 * Sets sound scheme to 'No sounds'
 * Disables mouse acceleration
 * Sets hostname
