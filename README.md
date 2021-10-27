@@ -69,6 +69,11 @@ You can override any of the defaults configured in `default.config.yml` by creat
 configure_hostname: true
 custom_hostname: myhostname
 
+install_windows_updates: true
+update_categories:
+  - Critical Updates
+  - Security Updates
+
 choco_installed_packages:
   - googlechrome
   - git

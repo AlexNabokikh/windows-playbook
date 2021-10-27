@@ -1,8 +1,6 @@
 ---
-- name: Install all security, critical, and rollup updates.
+- name: Ensure Windows updates installed.
   ansible.windows.win_updates:
-    category_names:
-      - SecurityUpdates
-      - CriticalUpdates
-      - UpdateRollups
+    category_names: "{{ item }}"
     reboot: true
+  loop: "{{ update_categories }}"
