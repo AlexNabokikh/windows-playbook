@@ -1,0 +1,4 @@
+---
+- name: "Ensure power plan set to {{ power_plan }}"
+  win_power_plan:
+    name: "{{ power_plan }}"
