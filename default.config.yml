@@ -11,7 +11,7 @@ install_windows_updates: true
 update_categories:
   # You can install only specific updates by uncommenting it
   # * - installs all updates
-  - "*" 
+  - "*"
   # - Critical Updates
   # - Definition Updates
   # - Developer Kits
