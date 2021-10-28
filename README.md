@@ -35,6 +35,11 @@ This playbook installs and configures most of the software I use on my Windows 1
     * Ensures Explorer opens itself to the Computer view.
     * Ensures Ribbon menu is disabled in Windows Explorer.
     * Ensures Right-click Context Menu enabled (Windows 11).
+  * Start Menu
+    * Ensures Automatic Install of Suggested Apps disabled.
+    * Ensures App Suggestions in Start menu disabled.
+    * Ensures popup "tips" about Windows disabled.
+    * Ensures 'Windows Welcome Experience' disabled.
   * Taskbar
     * Ensures 'Search' unpinned from Taskbar.
     * Ensures Task View, Chat and Cortana are unpinned from Taskbar.
@@ -80,7 +85,7 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`  `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `sounds` , `taskbar` , `wsl` .
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`  `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `power` , `sounds` , `start_menu` , `taskbar` , `updates` , `windows_features` , `wsl` .
 
 ```sh
 ansible-playbook main.yml --tags "choco,wsl"
