@@ -43,6 +43,10 @@
       when: configure_taskbar
       tags: ["taskbar"]
 
+    - import_tasks: tasks/start_menu.yml
+      when: configure_start_menu
+      tags: ["start_menu"]
+
     - import_tasks: tasks/sounds.yml
       when: set_sound_scheme
       tags: ["sounds"]

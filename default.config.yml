@@ -2,6 +2,7 @@
 configure_explorer: true
 configure_hostname: false
 custom_hostname: windows-ansible
+configure_start_menu: true
 configure_taskbar: true
 disable_mouse_acceleration: true
 remove_desktop_icons: false
