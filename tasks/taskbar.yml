@@ -13,9 +13,10 @@
     data: 0
     type: dword
   loop:
-    - ShowTaskViewButton
-    - TaskbarMn
     - ShowCortanaButton
+    - ShowTaskViewButton
+    - TaskbarDa
+    - TaskbarMn
 
 - name: Ensure 'News and Interests' unpinned from Taskbar.
   ansible.windows.win_regedit:
@@ -23,3 +24,16 @@
     name: ShellFeedsTaskbarViewMode
     data: 2
     type: dword
+
+- name: Ensure 'People' unpinned from Taskbar.
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People
+    name: PeopleBand
+    data: 0
+    type: dword
+
+- name: Ensure 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband
+    name: Favorites
+    state: absent
