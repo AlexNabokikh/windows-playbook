@@ -5,7 +5,7 @@ custom_hostname: windows-ansible
 configure_start_menu: true
 configure_taskbar: true
 disable_mouse_acceleration: true
-remove_desktop_icons: false
+remove_desktop_icons: fasle
 set_sound_scheme: true
 
 install_windows_updates: true
@@ -57,7 +57,7 @@ installed_nerdfonts:
 # List of features: "Get-WindowsOptionalFeature -Online"
 install_windows_features: false
 windows_features:
-  - "Microsoft-Hyper-V": true
+  Microsoft-Hyper-V: true
 
 # List of valid distributions that can be installed:
 # wsl-alpine
