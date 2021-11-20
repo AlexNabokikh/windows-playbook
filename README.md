@@ -48,11 +48,13 @@ This playbook installs and configures most of the software I use on my Windows 1
     * Ensures 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
   * **Desktop**
     * Ensure Desktop icons are removed.
-  * Ensures mouse acceleration is disabled.
-  * Ensure sound scheme set to 'No sounds'.
-  * Ensure the power plan selected by the user is set.
-  * Ensure Windows updates are selected by the user installed.
-  * Ensure configured hostname selected by the user is set.
+  * **General**
+    * Ensure configured hostname selected by the user is set.
+    * Ensure remote desktop services configured.
+    * Ensure sound scheme set to 'No sounds'.
+    * Ensure the power plan selected by the user is set.
+    * Ensure Windows updates are selected by the user installed.
+    * Ensures mouse acceleration is disabled.
 
 ## Installation
 
