@@ -59,6 +59,9 @@
       when: change_power_plan
       tags: ["power"]
 
+    - import_tasks: tasks/remote_desktop.yml
+      tags: ["remote_desktop"]
+
     - import_tasks: tasks/desktop.yml
       when: remove_desktop_icons
       tags: ["desktop"]
