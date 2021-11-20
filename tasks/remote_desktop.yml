@@ -1,0 +1,16 @@
+---
+- name: Ensure Remote Desktop Services configured.
+  win_regedit:
+    path: "{{ item }}"
+    name: fDenyTSConnections
+    data: 00000000
+    type: dword
+    state: "{{ 'present' if remote_desktop_enabled else 'absent' }}"
+  with_items:
+    - "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\"
+    - "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services"
+
+- name: Ensure Firewall rule configured.
+  win_shell: >
+    "{{ 'Enable-NetFirewallRule' if remote_desktop_enabled else 'Disable-NetFirewallRule' }}
+    -DisplayGroup 'Remotedesktop'"
