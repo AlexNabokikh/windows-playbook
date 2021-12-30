@@ -20,10 +20,11 @@
 
 - name: Ensure 'News and Interests' unpinned from Taskbar.
   ansible.windows.win_regedit:
-    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds
-    name: ShellFeedsTaskbarViewMode
-    data: 2
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds
+    name: EnableFeeds
+    data: 0
     type: dword
+    state: present
 
 - name: Ensure 'People' unpinned from Taskbar.
   ansible.windows.win_regedit:
