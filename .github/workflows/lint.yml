@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Lint
 
 on:
   pull_request:
@@ -16,9 +16,9 @@ jobs:
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: "3.x"
       - name: Install test dependencies.
-        run: pip3 install yamllint ansible ansible-lint
+        run: pip3 install yamllint ansible-lint
       - name: Lint code.
         run: |
           yamllint .
