@@ -2,7 +2,7 @@
 
 ![Logo](files/logo.png)
 
-[![CI][badge-gh-actions]][link-gh-actions]
+![badge-gh-actions]
 ![badge-windows-10]
 ![badge-windows-11]
 ![badge-license]
@@ -163,7 +163,6 @@ This software is available under the following licenses:
 * **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
 
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/release.yaml/badge.svg
-[link-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/?query=workflow%3ACI
 [badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011%2021H2-blue
 [badge-windows-10]: https://img.shields.io/badge/OS-Windows%2010%2020H2-blue
 [badge-license]: https://img.shields.io/badge/License-MIT-informational
