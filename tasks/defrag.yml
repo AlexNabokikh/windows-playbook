@@ -4,4 +4,4 @@
     include_volumes: "{{ item.name | default(C) }}"
     parallel: true
     freespace_consolidation: true
-  loop: "{{ volumes }}"
+  loop: "{{ include_volumes }}"

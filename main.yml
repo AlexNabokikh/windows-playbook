@@ -12,6 +12,10 @@
       tags: ["always"]
 
   tasks:
+    - import_tasks: tasks/hostname.yml
+      when: configure_hostname
+      tags: ["hostname"]
+
     - import_tasks: tasks/updates.yml
       when: install_windows_updates
       tags: ["updates"]
@@ -66,6 +70,6 @@
       when: remove_desktop_icons
       tags: ["desktop"]
 
-    - import_tasks: tasks/hostname.yml
-      when: configure_hostname
-      tags: ["hostname"]
+    - import_tasks: tasks/defrag.yml
+      when: defrag_volumes
+      tags: ["defrag"]
