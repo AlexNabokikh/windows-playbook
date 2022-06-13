@@ -10,3 +10,12 @@
   win_chocolatey:
     name: all
     state: latest
+
+- name: Clean chocolatey and nuget cache.
+  win_file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - '%UserProfile%\AppData\Local\Temp\chocolatey\'
+    - '%UserProfile%\AppData\Local\Temp\nuget\'
+    - '%UserProfile%\AppData\Local\NuGet\Cache\'
