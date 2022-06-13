@@ -137,8 +137,6 @@ Packages (installed with Chocolatey):
 * auto-dark-mode
 * awscli
 * capture2text
-* choco-cleaner
-* choco-upgrade-all-at-startup
 * Firefox
 * git
 * golang
