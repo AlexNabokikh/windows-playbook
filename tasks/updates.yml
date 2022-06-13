@@ -3,4 +3,5 @@
   ansible.windows.win_updates:
     category_names: "{{ item }}"
     reboot: true
+    state: installed
   loop: "{{ update_categories }}"
