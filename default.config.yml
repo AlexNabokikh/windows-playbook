@@ -34,8 +34,6 @@ choco_installed_packages:
   - adobereader
   - auto-dark-mode
   - awscli
-  - choco-cleaner
-  - choco-upgrade-all-at-startup
   - git
   - golang
   - jre8
@@ -114,3 +112,8 @@ bloatware:
   - Microsoft.ZuneMusic
   - Microsoft.ZuneVideo
   - MicrosoftTeams
+
+defrag_volumes: true
+include_volumes:
+  - C
+  - D

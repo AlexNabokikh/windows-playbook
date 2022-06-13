@@ -3,3 +3,6 @@ extends: default
 rules:
   line-length:
     max: 180
+
+ignore: |
+  /.github

@@ -1,0 +1,7 @@
+---
+- name: Ensure selected volumes are defragmented (in parallel).
+  community.windows.win_defrag:
+    include_volumes: "{{ item.name | default('C') }}"
+    parallel: true
+    freespace_consolidation: true
+  loop: "{{ include_volumes }}"
