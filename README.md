@@ -29,6 +29,7 @@ This playbook installs and configures most of the software I use on my Windows 1
 * **Windows apps & features**
   * Ensures the Optional Windows Features selected by the user are installed and enabled.
   * Ensures WSL2 distro selected by the user is installed and enabled.
+  * Ensures selected by user volumes are defragmented (in parallel).
 * **Windows Settings**
   * **Explorer**
     * Ensures Explorer includes the file extension in file names.
