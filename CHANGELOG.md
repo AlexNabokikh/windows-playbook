@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.6.1...v1.7.0) (2022-06-13)
+
+
+### Features
+
+* **.yamllint.yml:** ignore github ci yaml during lint stage ([0d7fdc6](https://github.com/AlexNabokikh/windows-playbook/commit/0d7fdc67fffcb794ddd61a453f1b65df20160939))
+* added 'defragment' task to the main config ([5779595](https://github.com/AlexNabokikh/windows-playbook/commit/57795954c50b9c9ea76e3744f9b0de128a5b970e))
+* **chocolatey.yml:** added chocolatey and nuget cache clear task ([921b511](https://github.com/AlexNabokikh/windows-playbook/commit/921b5111caa87428e19d30d3ac79b61ab893e43e))
+* **defrag.yml:** added 'defragment' task ([24016c8](https://github.com/AlexNabokikh/windows-playbook/commit/24016c8a75e1f6d7087147a0ec341c61944bbdf7))
+* **updates.yml:** set 'state' explicitly for better readability ([7c66404](https://github.com/AlexNabokikh/windows-playbook/commit/7c66404dcacb312319c37dafcb5eeb67487e986e))
+
+
+### Bug Fixes
+
+* **defrag.yml:** fixed default value for valumes ([dc0ecbc](https://github.com/AlexNabokikh/windows-playbook/commit/dc0ecbcab409880904d42be5125cc66e518693af))
+
 ### [1.6.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.6.0...v1.6.1) (2022-06-12)
 
 
