@@ -1,6 +1,6 @@
 ---
 - name: Windows optional features.
-  win_optional_feature:
+  ansible.windows.win_optional_feature:
     name: "{{ windows_feature.key }}"
     state: "{{ 'present' if windows_feature.value else 'absent' }}"
     include_parent: true
