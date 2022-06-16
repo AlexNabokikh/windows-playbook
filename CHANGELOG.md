@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.7.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.7.0...v1.7.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* refactored modules definition according to best practices ([ae228a9](https://github.com/AlexNabokikh/windows-playbook/commit/ae228a9a486c687c47005d0f37d63b8bdd95ab97))
+
 ## [1.7.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.6.1...v1.7.0) (2022-06-13)
 
 
