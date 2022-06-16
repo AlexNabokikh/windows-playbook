@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.7.1...v1.8.0) (2022-06-16)
+
+
+### Features
+
+* **.ansible-lint:** adjusted linter settings ([d8ef644](https://github.com/AlexNabokikh/windows-playbook/commit/d8ef6441f5e1ef0e0a1650a6994459615af371bd))
+
 ### [1.7.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.7.0...v1.7.1) (2022-06-16)
 
 
