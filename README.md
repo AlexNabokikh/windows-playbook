@@ -117,6 +117,7 @@ installed_nerdfonts:
   - Meslo
 
 install_ohmyposh: true
+ohmyposh_theme: agnoster
 
 install_windows_features: true
 windows_features:
