@@ -15,6 +15,6 @@
   community.windows.win_lineinfile:
     path: "{{ powershell_profile_path.stdout | trim }}"
     insertbefore: BOF
-    create: yes
+    create: true
     regex: "^oh-my-posh"
     line: "oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH/'{{ ohmyposh_theme | default('paradox') }}'.omp.json | Invoke-Expression"
