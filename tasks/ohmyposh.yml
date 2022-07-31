@@ -1,0 +1,20 @@
+---
+- name: Ensure oh-my-posh is installed.
+  chocolatey.chocolatey.win_chocolatey:
+    name: oh-my-posh
+    ignore_checksums: true
+    state: present
+
+- name: Get PowerShell profile path.
+  ansible.windows.win_command: powershell.exe -
+  args:
+    stdin: echo $PROFILE
+  register: powershell_profile_path
+
+- name: Ensure oh-my-posh set as a default PowerShell profile.
+  community.windows.win_lineinfile:
+    path: "{{ powershell_profile_path.stdout | trim }}"
+    insertbefore: BOF
+    create: true
+    regex: "^oh-my-posh"
+    line: "oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH/'{{ ohmyposh_theme | default('paradox') }}'.omp.json | Invoke-Expression"

@@ -29,16 +29,16 @@ change_power_plan: true
 power_plan: "high performance"
 
 choco_installed_packages:
-  - 7zip
-  - Firefox
   - adobereader
   - auto-dark-mode
   - awscli
+  - Firefox
   - git
   - golang
   - jre8
   - kubernetes-cli
   - microsoft-windows-terminal
+  - peazip
   - powertoys
   - python3
   - sharex
@@ -52,6 +52,8 @@ install_fonts: true
 installed_nerdfonts:
   - FiraCode
   - FantasqueSansMono
+
+install_ohmyposh: true
 
 # List of features: "Get-WindowsOptionalFeature -Online"
 install_windows_features: false

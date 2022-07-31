@@ -11,51 +11,51 @@ This playbook installs and configures most of the software I use on my Windows 1
 
 ## Contents
 
-* [Playbook capabilities](#playbook-capabilities)
-* [Installation](#installation)
-* [Windows host prerequisites installation](#prepare-your-windows-host-)
-* [Ansible control node prerequisites installation](#ansible-control-node-)
-* [Running a specific set of tagged tasks](#running-a-specific-set-of-tagged-tasks)
-* [Overriding Defaults](#overriding-defaults)
-* [Included Applications / Configuration (Default)](#included-applications--configuration-default)
+- [Playbook capabilities](#playbook-capabilities)
+- [Installation](#installation)
+- [Windows host prerequisites installation](#prepare-your-windows-host-)
+- [Ansible control node prerequisites installation](#ansible-control-node-)
+- [Running a specific set of tagged tasks](#running-a-specific-set-of-tagged-tasks)
+- [Overriding Defaults](#overriding-defaults)
+- [Included Applications / Configuration (Default)](#included-applications--configuration-default)
 
 ## Playbook capabilities
 
 > **NOTE:** The Playbook is fully configurable. You can skip or reconfigure any task by [Overriding Defaults](#overriding-defaults).
 
-* **Software**
-  * Ensures Bloatware removed (see default config for a complete list of Bloatware).
-  * Ensure software and packages selected by the user are installed via Chocolatey.
-* **Windows apps & features**
-  * Ensures the Optional Windows Features selected by the user are installed and enabled.
-  * Ensures WSL2 distro selected by the user is installed and enabled.
-  * Ensures selected by user volumes are defragmented (in parallel).
-* **Windows Settings**
-  * **Explorer**
-    * Ensures Explorer includes the file extension in file names.
-    * Ensures Explorer opens itself to the Computer view.
-    * Ensures Ribbon menu is disabled in Windows Explorer.
-    * Ensures Right-click Context Menu enabled (Windows 11).
-  * **Start Menu**
-    * Ensures Automatic Install of Suggested Apps disabled.
-    * Ensures App Suggestions in Start menu disabled.
-    * Ensures popup "tips" about Windows disabled.
-    * Ensures 'Windows Welcome Experience' disabled.
-  * **Taskbar**
-    * Ensures 'Search' unpinned from Taskbar.
-    * Ensures Task View, Chat and Cortana are unpinned from Taskbar.
-    * Ensures 'News and Interests' unpinned from Taskbar.
-    * Ensures 'People' unpinned from Taskbar.
-    * Ensures 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
-  * **Desktop**
-    * Ensure Desktop icons are removed.
-  * **General**
-    * Ensure configured hostname selected by the user is set.
-    * Ensure remote desktop services configured.
-    * Ensure sound scheme set to 'No sounds'.
-    * Ensure the power plan selected by the user is set.
-    * Ensure Windows updates are selected by the user installed.
-    * Ensures mouse acceleration is disabled.
+- **Software**
+  - Ensures Bloatware removed (see default config for a complete list of Bloatware).
+  - Ensure software and packages selected by the user are installed via Chocolatey.
+- **Windows apps & features**
+  - Ensures the Optional Windows Features selected by the user are installed and enabled.
+  - Ensures WSL2 distro selected by the user is installed and enabled.
+  - Ensures selected by user volumes are defragmented (in parallel).
+- **Windows Settings**
+  - **Explorer**
+    - Ensures Explorer includes the file extension in file names.
+    - Ensures Explorer opens itself to the Computer view.
+    - Ensures Ribbon menu is disabled in Windows Explorer.
+    - Ensures Right-click Context Menu enabled (Windows 11).
+  - **Start Menu**
+    - Ensures Automatic Install of Suggested Apps disabled.
+    - Ensures App Suggestions in Start menu disabled.
+    - Ensures popup "tips" about Windows disabled.
+    - Ensures 'Windows Welcome Experience' disabled.
+  - **Taskbar**
+    - Ensures 'Search' unpinned from Taskbar.
+    - Ensures Task View, Chat and Cortana are unpinned from Taskbar.
+    - Ensures 'News and Interests' unpinned from Taskbar.
+    - Ensures 'People' unpinned from Taskbar.
+    - Ensures 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
+  - **Desktop**
+    - Ensure Desktop icons are removed.
+  - **General**
+    - Ensure configured hostname selected by the user is set.
+    - Ensure remote desktop services configured.
+    - Ensure sound scheme set to 'No sounds'.
+    - Ensure the power plan selected by the user is set.
+    - Ensure Windows updates are selected by the user installed.
+    - Ensures mouse acceleration is disabled.
 
 ## Installation
 
@@ -78,8 +78,8 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 1. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html):
 
-    1. Upgrade Pip: `pip3 install --upgrade pip`
-    2. Install Ansible: `pip3 install ansible`
+   1. Upgrade Pip: `pip3 install --upgrade pip`
+   2. Install Ansible: `pip3 install ansible`
 
 2. Clone or download this repository to your local drive.
 3. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible collections.
@@ -88,7 +88,7 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`  `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `power` , `sounds` , `start_menu` , `taskbar` , `updates` , `windows_features` , `wsl` .
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `power` , `sounds` , `start_menu` , `taskbar` , `updates` , `windows_features` , `wsl` .
 
 ```sh
 ansible-playbook main.yml --tags "choco,wsl"
@@ -116,6 +116,9 @@ install_fonts: true
 installed_nerdfonts:
   - Meslo
 
+install_ohmyposh: true
+ohmyposh_theme: agnoster
+
 install_windows_features: true
 windows_features:
   Microsoft-Hyper-V: true
@@ -132,24 +135,24 @@ bloatware:
 
 Packages (installed with Chocolatey):
 
-* 7zip
-* adobereader
-* auto-dark-mode
-* awscli
-* capture2text
-* Firefox
-* git
-* golang
-* jre8
-* kubernetes-cli
-* microsoft-windows-terminal
-* powertoys
-* python3
-* telegram
-* terraform
-* vlc
-* vscode
-* zoom
+- adobereader
+- auto-dark-mode
+- awscli
+- capture2text
+- Firefox
+- git
+- golang
+- jre8
+- kubernetes-cli
+- microsoft-windows-terminal
+- peazip
+- powertoys
+- python3
+- telegram
+- terraform
+- vlc
+- vscode
+- zoom
 
 ## Author
 
@@ -159,7 +162,7 @@ This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nab
 
 This software is available under the following licenses:
 
-* **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
+- **[MIT](https://github.com/AlexNabokikh/windows-playbook/blob/master/LICENSE)**
 
 [badge-gh-actions]: https://github.com/AlexNabokikh/windows-playbook/actions/workflows/release.yaml/badge.svg
 [badge-windows-11]: https://img.shields.io/badge/OS-Windows%2011%2021H2-blue

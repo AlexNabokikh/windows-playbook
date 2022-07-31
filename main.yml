@@ -39,6 +39,10 @@
       when: install_fonts
       tags: ["fonts"]
 
+    - import_tasks: tasks/ohmyposh.yml
+      when: install_ohmyposh
+      tags: ["ohmyposh"]
+
     - import_tasks: tasks/explorer.yml
       when: configure_explorer
       tags: ["explorer"]
