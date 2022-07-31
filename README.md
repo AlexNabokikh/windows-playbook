@@ -134,7 +134,6 @@ bloatware:
 
 Packages (installed with Chocolatey):
 
-- 7zip
 - adobereader
 - auto-dark-mode
 - awscli
@@ -145,6 +144,7 @@ Packages (installed with Chocolatey):
 - jre8
 - kubernetes-cli
 - microsoft-windows-terminal
+- peazip
 - powertoys
 - python3
 - telegram
