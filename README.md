@@ -24,17 +24,17 @@ This playbook installs and configures most of the software I use on my Windows 1
 > **NOTE:** The Playbook is fully configurable. You can skip or reconfigure any task by [Overriding Defaults](#overriding-defaults).
 
 - **Software**
-  - Ensures Bloatware removed (see default config for a complete list of Bloatware).
+  - Ensures Bloatware is removed (see default config for a complete list of Bloatware).
   - Ensure software and packages selected by the user are installed via Chocolatey.
 - **Windows apps & features**
-  - Ensures the Optional Windows Features selected by the user are installed and enabled.
+  - Ensures the Optional Windows Features chosen by the user are installed and enabled.
   - Ensures WSL2 distro selected by the user is installed and enabled.
   - Ensures selected by user volumes are defragmented (in parallel).
 - **Windows Settings**
   - **Explorer**
     - Ensures Explorer includes the file extension in file names.
     - Ensures Explorer opens itself to the Computer view.
-    - Ensures Ribbon menu is disabled in Windows Explorer.
+    - Ensures the Ribbon menu is disabled in Windows Explorer.
     - Ensures Right-click Context Menu enabled (Windows 11).
   - **Start Menu**
     - Ensures Automatic Install of Suggested Apps disabled.
@@ -43,7 +43,7 @@ This playbook installs and configures most of the software I use on my Windows 1
     - Ensures 'Windows Welcome Experience' disabled.
   - **Taskbar**
     - Ensures 'Search' unpinned from Taskbar.
-    - Ensures Task View, Chat and Cortana are unpinned from Taskbar.
+    - Ensures Task View, Chat, and Cortana are unpinned from Taskbar.
     - Ensures 'News and Interests' unpinned from Taskbar.
     - Ensures 'People' unpinned from Taskbar.
     - Ensures 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
@@ -51,11 +51,13 @@ This playbook installs and configures most of the software I use on my Windows 1
     - Ensure Desktop icons are removed.
   - **General**
     - Ensure configured hostname selected by the user is set.
-    - Ensure remote desktop services configured.
-    - Ensure sound scheme set to 'No sounds'.
+    - Ensure remote desktop services are configured.
+    - Ensure the sound scheme is set to 'No sounds'.
     - Ensure the power plan selected by the user is set.
     - Ensure Windows updates are selected by the user installed.
     - Ensures mouse acceleration is disabled.
+- **Terminal Settings**
+  - Ensures [oh-my-posh](https://ohmyposh.dev/) with the theme chosen by the user is set as a default PowerShell theme engine.
 
 ## Installation
 
@@ -156,7 +158,7 @@ Packages (installed with Chocolatey):
 
 ## Author
 
-This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nabokih/) (originally inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)).
+This project was created by [Alexander Nabokikh](https://www.linkedin.com/in/nabokih/) (initially inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)).
 
 ## License
 
