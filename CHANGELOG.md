@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.8.0...v1.9.0) (2022-07-31)
+
+
+### Features
+
+* added oh-my-posh as a prompt theme engine for powershell ([b561390](https://github.com/AlexNabokikh/windows-playbook/commit/b561390f674d03c2bd03861c149ef7d256df1d76))
+* **README.md:** added oh-my-posh theme change example ([63246f9](https://github.com/AlexNabokikh/windows-playbook/commit/63246f917ce84b288dd666ff5bb884d39f513cb8))
+* replaced 7zip with the modern alternative ([222339e](https://github.com/AlexNabokikh/windows-playbook/commit/222339ee9c74f9c2be8d8e375cf89ff09b25cdb9))
+
+
+### Bug Fixes
+
+* **ohmyposh.yml:** replaced yes with true ([bde9253](https://github.com/AlexNabokikh/windows-playbook/commit/bde9253e068406de0079b828b3aea4a56a79152e))
+
 ## [1.8.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.7.1...v1.8.0) (2022-06-16)
 
 
