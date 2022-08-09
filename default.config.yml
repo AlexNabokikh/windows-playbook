@@ -10,6 +10,7 @@ remove_desktop_icons: false
 set_sound_scheme: true
 
 install_windows_updates: true
+windows_updates_reboot: true
 update_categories:
   # You can install only specific updates by uncommenting it
   # * - installs all updates
