@@ -1,7 +1,11 @@
 ---
+- name: Check for missing updates.
+  ansible.windows.win_updates:
+    state: searched
+
 - name: Ensure Windows updates installed.
   ansible.windows.win_updates:
-    category_names: "{{ item }}"
-    reboot: true
-    state: installed
-  loop: "{{ update_categories }}"
+    category_names: "{{ update_categories | default(omit) }}"
+    reboot: "{{ windows_updates_reboot | default(false) }}"
+  register: update_result
+  until: update_result.found_update_count == 0
