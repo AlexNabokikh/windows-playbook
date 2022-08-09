@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.10.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.9.0...v1.10.0) (2022-08-09)
+
+
+### Features
+
+* **windows_updates:** improved windows updates installation task ([be2c975](https://github.com/AlexNabokikh/windows-playbook/commit/be2c975cc41ccb782a54c88b841a4e4a91ccad52))
+
 ## [1.9.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.8.0...v1.9.0) (2022-07-31)
 
 
