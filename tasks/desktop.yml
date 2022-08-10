@@ -1,5 +1,22 @@
 ---
-- name: Ensure Desktop items are removed.
-  ansible.windows.win_powershell:
-    script: |
-      Remove-Item 'C:\Users\*\Desktop\*'
+- name: Get user profile path.
+  ansible.windows.win_command: powershell.exe -
+  args:
+    stdin: echo $HOME
+  register: user_home_path
+
+- name: Get shortcuts.
+  ansible.windows.win_find:
+    paths:
+      - C:\Users\Public\Desktop
+      - '{{ user_home_path.stdout | trim }}\Desktop'
+      - '{{ user_home_path.stdout | trim }}\OneDrive\Desktop'
+    patterns: "*.lnk"
+  register: shotcuts
+
+- name: Ensure shortcuts are removed.
+  ansible.windows.win_file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ shotcuts.files | unique }}"
+  when: shotcuts.files | length > 0
