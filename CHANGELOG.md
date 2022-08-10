@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.10.0...v1.11.0) (2022-08-10)
+
+
+### Features
+
+* **chocolatey:** improved choco packages installation task ([086473c](https://github.com/AlexNabokikh/windows-playbook/commit/086473cd96fa66db3071f8f5c5a8247a9ef05eb8))
+
+
+### Bug Fixes
+
+* **lint:** addressed yamllint warnings ([46a61b3](https://github.com/AlexNabokikh/windows-playbook/commit/46a61b39a28185b32ce053372813ff02533b3f17))
+
 ## [1.10.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.9.0...v1.10.0) (2022-08-09)
 
 
