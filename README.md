@@ -111,12 +111,15 @@ update_categories:
   - * # Installs all updates
 
 choco_installed_packages:
-  - name: googlechrome # installs latest version of the Google Chrome while ignoring the package checksum
+  # installs latest version of the Google Chrome while ignoring the package checksum
+  - name: googlechrome
     state: latest
     choco_args: --ignorechecksum
-  - name: git # installs 2.37.1 version of the git
+  # installs 2.37.1 version of the git
+  - name: git
     version: "2.37.1"
-  - golang # installs GO, but won't update it
+  # installs GO, but won't update it
+  - golang
 
 install_fonts: true
 installed_nerdfonts:
