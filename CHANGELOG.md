@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.12.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.11.0...v1.12.0) (2022-08-10)
+
+
+### Features
+
+* **desktop.yml:** limit desktop cleanup to shortcuts only ([324fb27](https://github.com/AlexNabokikh/windows-playbook/commit/324fb2759f64ee21f8746803050c4a0df4efafeb))
+
+
+### Bug Fixes
+
+* **desktop.yml:** fixed typo ([3cbf360](https://github.com/AlexNabokikh/windows-playbook/commit/3cbf360951cc9ab190dddea91fd5e4c924f14fb4))
+
 ## [1.11.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.10.0...v1.11.0) (2022-08-10)
 
 
