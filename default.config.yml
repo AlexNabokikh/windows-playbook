@@ -30,8 +30,14 @@ change_power_plan: true
 power_plan: "high performance"
 
 choco_installed_packages:
-  - adobereader
-  - auto-dark-mode
+  # installs 2019.2.2.20191 version of the adobe reader
+  - name: adobereader
+    version: "2022.002.20191"
+  # installs latest version of the auto-dark-mode while ignoring the package checksum
+  - name: auto-dark-mode
+    state: latest
+    choco_args: --ignorechecksum
+  # installs awscli, but won't update it
   - awscli
   - Firefox
   - git

@@ -98,7 +98,7 @@ ansible-playbook main.yml --tags "choco,wsl"
 
 ## Overriding Defaults
 
-You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and enable/disable specific tasks with something like:
+**NOTE:** You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and enable/disable specific tasks with something like:
 
 ```yaml
 configure_hostname: true
@@ -108,10 +108,17 @@ install_windows_updates: true
 update_categories:
   - Critical Updates
   - Security Updates
+  - * # Installs all updates
 
 choco_installed_packages:
-  - googlechrome
-  - git
+  # installs latest version of the Google Chrome while ignoring the package checksum
+  - name: googlechrome
+    state: latest
+    choco_args: --ignorechecksum
+  # installs 2.37.1 version of the git
+  - name: git
+    version: "2.37.1"
+  # installs GO, but won't update it
   - golang
 
 install_fonts: true
