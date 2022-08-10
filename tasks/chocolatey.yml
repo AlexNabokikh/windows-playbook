@@ -2,14 +2,10 @@
 - name: Ensure configured Chocolatey packages are installed.
   chocolatey.chocolatey.win_chocolatey:
     name: "{{ item.name | default(item) }}"
-    ignore_checksums: true
-    state: present
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    choco_args: "{{ item.choco_args | default(omit) }}"
   loop: "{{ choco_installed_packages }}"
-
-- name: Upgrade installed Chocolatey packages.
-  chocolatey.chocolatey.win_chocolatey:
-    name: all
-    state: latest
 
 - name: Clean chocolatey and nuget cache.
   ansible.windows.win_file:
