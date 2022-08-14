@@ -2,14 +2,24 @@
 - name: Ensure oh-my-posh is installed.
   chocolatey.chocolatey.win_chocolatey:
     name: oh-my-posh
-    ignore_checksums: true
-    state: present
 
 - name: Get PowerShell profile path.
   ansible.windows.win_command: powershell.exe -
   args:
     stdin: echo $PROFILE
   register: powershell_profile_path
+
+- name: Ensure PowerShell directory exists.
+  ansible.windows.win_file:
+    path: "{{ powershell_profile_path.stdout.split(separator)[:-1] | join(separator) }}"
+    state: directory
+  vars:
+    separator: '\'
+
+- name: Ensure PowerShell profile exists.
+  ansible.windows.win_file:
+    path: "{{ powershell_profile_path.stdout | trim }}"
+    state: touch
 
 - name: Ensure oh-my-posh set as a default PowerShell profile.
   community.windows.win_lineinfile:
