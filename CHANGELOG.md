@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.13.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.12.0...v1.13.0) (2022-08-15)
+
+
+### Features
+
+* **explorer.yml:** reformated task's code ([f79f1e6](https://github.com/AlexNabokikh/windows-playbook/commit/f79f1e6c50d9bdabf6f615ffe15a5976c458b85b))
+* **power_plan:** added default value for power_plan ([e9b537a](https://github.com/AlexNabokikh/windows-playbook/commit/e9b537adca33e69321d29cc3a4939d5075029c70))
+* **setup.ps1:** added powershell execution policy setup step ([812a485](https://github.com/AlexNabokikh/windows-playbook/commit/812a485d78ad5d0e294e53d43c3bc16878528bde))
+
+
+### Bug Fixes
+
+* **ohmyposh:** Ensure task won't fail because the PowerShell profile does not exist. ([b30ae1e](https://github.com/AlexNabokikh/windows-playbook/commit/b30ae1ee224a165891f1a1ffa18a4f5d7f2b7acc))
+
 ## [1.12.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.11.0...v1.12.0) (2022-08-10)
 
 
