@@ -8,10 +8,18 @@
   loop: "{{ choco_installed_packages }}"
 
 - name: Clean chocolatey and nuget cache.
-  ansible.windows.win_file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - '%UserProfile%\AppData\Local\Temp\chocolatey\'
-    - '%UserProfile%\AppData\Local\Temp\nuget\'
-    - '%UserProfile%\AppData\Local\NuGet\Cache\'
+  block:
+    - name: Ensure the chocolatey and NuGet cache is cleaned.
+      ansible.windows.win_file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - '%UserProfile%\AppData\Local\Temp\chocolatey\'
+        - '%UserProfile%\AppData\Local\Temp\nuget\'
+        - '%UserProfile%\AppData\Local\NuGet\Cache\'
+      register: cleanup_task
+  rescue:
+    - name: "{{ cleanup_task.msg }}"
+      ansible.builtin.debug:
+        msg: >
+          "Some chocolatey cache files are still in use. You may need to reboot your machine to resolve the error"
