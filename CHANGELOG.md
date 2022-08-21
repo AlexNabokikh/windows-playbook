@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.13.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.13.0...v1.13.1) (2022-08-21)
+
+
+### Bug Fixes
+
+* **chocolatey:** allow the cache cleaner task to continue if the cache is busy ([fe78ccc](https://github.com/AlexNabokikh/windows-playbook/commit/fe78ccc221d4bb11435a8edb984e3d16e726edb7))
+
 ## [1.13.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.12.0...v1.13.0) (2022-08-15)
 
 
