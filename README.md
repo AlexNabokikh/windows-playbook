@@ -28,8 +28,8 @@ This playbook installs and configures most of the software I use on my Windows 1
   - Ensure software and packages selected by the user are installed via Chocolatey.
 - **Windows apps & features**
   - Ensures the Optional Windows Features chosen by the user are installed and enabled.
-  - Ensures WSL2 distro selected by the user is installed and enabled.
-  - Ensures selected by user volumes are defragmented (in parallel).
+  - Ensures the WSL2 distro selected by the user is installed and enabled.
+  - Ensures set by user volumes are defragmented (in parallel).
 - **Windows Settings**
   - **Explorer**
     - Ensures Explorer includes the file extension in file names.
@@ -38,22 +38,22 @@ This playbook installs and configures most of the software I use on my Windows 1
     - Ensures Right-click Context Menu enabled (Windows 11).
   - **Start Menu**
     - Ensures Automatic Install of Suggested Apps disabled.
-    - Ensures App Suggestions in Start menu disabled.
-    - Ensures popup "tips" about Windows disabled.
-    - Ensures 'Windows Welcome Experience' disabled.
+    - Ensures the "App Suggestions" in the Start menu is disabled.
+    - Ensures the "tips" popup Windows disabled.
+    - Ensures 'Windows Welcome Experience' is disabled.
   - **Taskbar**
     - Ensures 'Search' unpinned from Taskbar.
     - Ensures Task View, Chat, and Cortana are unpinned from Taskbar.
     - Ensures 'News and Interests' unpinned from Taskbar.
     - Ensures 'People' unpinned from Taskbar.
-    - Ensures 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
+    - Ensures 'Edge', 'Store' and other built-in shortcuts unpinned from Taskbar.
   - **Desktop**
     - Ensure Desktop icons are removed.
   - **General**
-    - Ensure configured hostname selected by the user is set.
+    - Ensure configured hostname selected by the user is assigned.
     - Ensure remote desktop services are configured.
     - Ensure the sound scheme is set to 'No sounds'.
-    - Ensure the power plan selected by the user is set.
+    - Ensure the power plan selected by the user is assigned.
     - Ensure Windows updates are selected by the user installed.
     - Ensures mouse acceleration is disabled.
 - **Terminal Settings**
@@ -147,7 +147,6 @@ Packages (installed with Chocolatey):
 - adobereader
 - auto-dark-mode
 - awscli
-- capture2text
 - Firefox
 - git
 - golang
@@ -157,6 +156,7 @@ Packages (installed with Chocolatey):
 - peazip
 - powertoys
 - python3
+- sharex
 - telegram
 - terraform
 - vlc
