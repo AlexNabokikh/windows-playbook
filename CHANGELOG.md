@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.14.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.13.1...v1.14.0) (2022-09-03)
+
+
+### Features
+
+* **default.config:** adjusted the default config with more sane parameters ([e390c50](https://github.com/AlexNabokikh/windows-playbook/commit/e390c50192d13a0a47f5be24dc87546ee0de7e74))
+
+
+### Bug Fixes
+
+* **main:** added missed when parameter for the remote desktop task ([34ef92f](https://github.com/AlexNabokikh/windows-playbook/commit/34ef92f13eb15ac128eb32189de740b3536b327c))
+
 ### [1.13.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.13.0...v1.13.1) (2022-08-21)
 
 
