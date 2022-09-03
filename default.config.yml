@@ -14,15 +14,15 @@ windows_updates_reboot: true
 update_categories:
   # You can install only specific updates by uncommenting it
   # * - installs all updates
-  - "*"
-  # - Critical Updates
+  # - "*"
+  - Critical Updates
   # - Definition Updates
   # - Developer Kits
   # - Feature Packs
-  # - Security Updates
+  - Security Updates
   # - Service Packs
   # - Tools
-  # - Update Rollups
+  - Update Rollups
   # - Updates
   # - Upgrades
 
@@ -125,4 +125,3 @@ bloatware:
 defrag_volumes: true
 include_volumes:
   - C
-  - D
