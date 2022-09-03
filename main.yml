@@ -68,6 +68,7 @@
       tags: ["power"]
 
     - import_tasks: tasks/remote_desktop.yml
+      when: remote_desktop_enabled
       tags: ["remote_desktop"]
 
     - import_tasks: tasks/desktop.yml
