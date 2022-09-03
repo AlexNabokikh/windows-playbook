@@ -18,6 +18,7 @@ This playbook installs and configures most of the software I use on my Windows 1
 - [Running a specific set of tagged tasks](#running-a-specific-set-of-tagged-tasks)
 - [Overriding Defaults](#overriding-defaults)
 - [Included Applications / Configuration (Default)](#included-applications--configuration-default)
+- [Available Parameters](#available-parameters)
 
 ## Playbook capabilities
 
@@ -162,6 +163,38 @@ Packages (installed with Chocolatey):
 - vlc
 - vscode
 - zoom
+
+## Available Parameters
+
+| Name                       | Description                                                                                                      | Type         | Default                                                                                                                            |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| configure_hostname         | (Optional) Whether or not to set a custom hostname.                                                              | `bool`       | `false`                                                                                                                            |
+| custom_hostname            | (Optional) The hostname to set for the computer.                                                                 | `string`     | `windows-ansible`                                                                                                                  |
+| install_windows_updates    | (Optional) Whether or not to install Windows updates.                                                            | `bool`       | `true`                                                                                                                             |
+| update_categories          | (Optional) A list of categories to install updates from. The value \* will match all categories.                 | `list`       | `["CriticalUpdates", "SecurityUpdates", "UpdateRollups"]`                                                                          |
+| windows_updates_reboot     | (Optional) Whether or not to reboot the host if it is required and continue to install updates after the reboot. | `bool`       | `true`                                                                                                                             |
+| remove_bloatware           | (Optional) Whether or not to uninstall Windows bloatware.                                                        | `bool`       | `true`                                                                                                                             |
+| bloatware                  | (Optional) A list of applications (bloatware) to be uninstalled                                                  | `list`       | [full_list](https://github.com/AlexNabokikh/windows-playbook/blob/8be81399018d151e5f4f5ea08034fc4bd0ad30da/default.config.yml#L85) |
+| choco_installed_packages   | (Required) A list of Chocolatey packages to be installed.                                                        | `list`       | [full_list](#included-applications--configuration-default)                                                                         |
+| state (chocolatey)         | (Optional) State of the package on the system. (present, latest)                                                 | `string`     | `present`                                                                                                                          |
+| version (chocolatey)       | (Optional) Specific version of the package to be installed.                                                      | `string`     | `omit`                                                                                                                             |
+| choco_args (chocolatey)    | (Optional) Additional parameters to pass to choco.exe.                                                           | `string`     | `omit`                                                                                                                             |
+| install_windows_features   | (Optional) Whether or not to install Windows features.                                                           | `bool`       | `false`                                                                                                                            |
+| windows_features           | (Optional) A list of dicts with Windows features to be installed.                                                | `list(dict)` | `Microsoft-Hyper-V: true`                                                                                                          |
+| install_wsl2               | (Optional) Whether or not to install Windows Subsystem for Linux.                                                | `bool`       | `true`                                                                                                                             |
+| wsl2_distribution          | (Optional) The valid name of Linux distribution that will be installed.                                          | `string`     | `wsl-ubuntu-2004`                                                                                                                  |
+| install_fonts              | (Optional) Whether or not to install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/).                     | `bool`       | `true`                                                                                                                             |
+| installed_nerdfonts        | (Optional) A list of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/) to be installed.                     | `list`       | `["FiraCode", "FantasqueSansMono"]`                                                                                                |
+| install_ohmyposh           | (Optional) Whether or not to [Oh My Posh](https://ohmyposh.dev/).                                                | `bool`       | `true`                                                                                                                             |
+| configure_explorer         | (Optional) Whether or not to configure Windows Explorer with sane defaults.                                      | `bool`       | `true`                                                                                                                             |
+| configure_taskbar          | (Optional) Whether or not to configure Windows TaskBar with sane defaults.                                       | `bool`       | `true`                                                                                                                             |
+| configure_start_menu       | (Optional) Whether or not to configure Windows Start menu with sane defaults.                                    | `bool`       | `true`                                                                                                                             |
+| set_sound_scheme           | (Optional) Whether or not to set default Windows Sound Scheme to "No Sounds".                                    | `bool`       | `true`                                                                                                                             |
+| disable_mouse_acceleration | (Optional) Whether or not to disable mouse acceleration.                                                         | `bool`       | `true`                                                                                                                             |
+| remote_desktop_enabled     | (Optional) Whether or not enable Remote Desktop.                                                                 | `bool`       | `true`                                                                                                                             |
+| remove_desktop_icons       | (Optional) Whether or not remove desktop icons (\*.lnk files only).                                              | `bool`       | `false`                                                                                                                            |
+| defrag_volumes             | (Optional) Whether or not to perform disk defragmentation.                                                       | `bool`       | `true`                                                                                                                             |
+| include_volumes            | (Optional) A list of volumes to be defragmented.                                                                 | `list`       | `["C"]`                                                                                                                            |
 
 ## Author
 
