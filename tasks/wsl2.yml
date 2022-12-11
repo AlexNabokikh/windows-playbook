@@ -17,7 +17,7 @@
     ignore_checksums: true
     state: present
 
-- name: Ensure WSL2 with "{{ wsl2_distribution }}" installed.
+- name: Ensure WSL2 distribution installed.
   chocolatey.chocolatey.win_chocolatey:
     name: "{{ wsl2_distribution }}"
     ignore_checksums: true
