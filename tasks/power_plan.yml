@@ -1,5 +1,5 @@
 ---
-- name: "Ensure power plan set to {{ power_plan }}"
+- name: "Set power plan to {{ power_plan }}"
   vars:
     plans:
       high_performance: "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"

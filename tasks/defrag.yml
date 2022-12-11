@@ -1,5 +1,5 @@
 ---
-- name: Ensure selected volumes are defragmented (in parallel).
+- name: Run defragmentation on selected volumes (in parallel).
   community.windows.win_defrag:
     include_volumes: "{{ item.name | default('C') }}"
     parallel: true

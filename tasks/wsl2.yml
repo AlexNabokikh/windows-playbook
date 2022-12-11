@@ -1,5 +1,5 @@
 ---
-- name: Ensure Windows Subsystem for Linux enabled.
+- name: Enable Windows Subsystem for Linux.
   ansible.windows.win_optional_feature:
     name:
       - Microsoft-Windows-Subsystem-Linux
@@ -11,13 +11,13 @@
   ansible.windows.win_reboot:
   when: wsl_status.reboot_required
 
-- name: Ensure Linux kernel update package installed.
+- name: Install Linux kernel update package via the Chocolatey.
   chocolatey.chocolatey.win_chocolatey:
     name: wsl2
     ignore_checksums: true
     state: present
 
-- name: Ensure WSL2 distribution installed.
+- name: Install WSL2 distribution.
   chocolatey.chocolatey.win_chocolatey:
     name: "{{ wsl2_distribution }}"
     ignore_checksums: true

@@ -1,5 +1,5 @@
 ---
-- name: Windows optional features.
+- name: Enable Windows optional features.
   ansible.windows.win_optional_feature:
     name: "{{ windows_feature.key }}"
     state: "{{ 'present' if windows_feature.value else 'absent' }}"

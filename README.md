@@ -25,40 +25,40 @@ This playbook installs and configures most of the software I use on my Windows 1
 > **NOTE:** The Playbook is fully configurable. You can skip or reconfigure any task by [Overriding Defaults](#overriding-defaults).
 
 - **Software**
-  - Ensures Bloatware is removed (see default config for a complete list of Bloatware).
-  - Ensure software and packages selected by the user are installed via Chocolatey.
+  - Remove Bloatware (see default config for a complete list of Bloatware).
+  - Install software and packages via Chocolatey selected by the user.
 - **Windows apps & features**
-  - Ensures the Optional Windows Features chosen by the user are installed and enabled.
-  - Ensures the WSL2 distro selected by the user is installed and enabled.
-  - Ensures set by user volumes are defragmented (in parallel).
+  - Install and Enable Optional Windows Features chosen by the user.
+  - Install and Enable the WSL2 distro selected by the user.
+  - Run defragmentation on volumes selected by the user (in parallel).
 - **Windows Settings**
   - **Explorer**
-    - Ensures Explorer includes the file extension in file names.
-    - Ensures Explorer opens itself to the Computer view.
-    - Ensures the Ribbon menu is disabled in Windows Explorer.
-    - Ensures Right-click Context Menu enabled (Windows 11).
+    - Enable Explorer file extensions in file names.
+    - Open Explorer in the Computer view by default.
+    - Disable the Ribbon menu in Windows Explorer.
+    - Enable Right-click Context Menu (Windows 11).
   - **Start Menu**
-    - Ensures Automatic Install of Suggested Apps disabled.
-    - Ensures the "App Suggestions" in the Start menu is disabled.
-    - Ensures the "tips" popup Windows disabled.
-    - Ensures 'Windows Welcome Experience' is disabled.
+    - Disable Automatic Install of Suggested Apps.
+    - Disable the "App Suggestions" in the Start menu.
+    - Disable the "tips" popup.
+    - Disable 'Windows Welcome Experience'.
   - **Taskbar**
-    - Ensures 'Search' unpinned from Taskbar.
-    - Ensures Task View, Chat, and Cortana are unpinned from Taskbar.
-    - Ensures 'News and Interests' unpinned from Taskbar.
-    - Ensures 'People' unpinned from Taskbar.
-    - Ensures 'Edge', 'Store' and other built-in shortcuts unpinned from Taskbar.
+    - Unpin 'Search' from Taskbar.
+    - Unpin Task View, Chat, and Cortana from Taskbar.
+    - Unpin 'News and Interests' from Taskbar.
+    - Unpin 'People' from Taskbar.
+    - Unpin 'Edge', 'Store' and other built-in shortcuts from the Taskbar.
   - **Desktop**
-    - Ensure Desktop icons are removed.
+    - Remove Desktop icons (Ink).
   - **General**
-    - Ensure configured hostname selected by the user is assigned.
-    - Ensure remote desktop services are configured.
-    - Ensure the sound scheme is set to 'No sounds'.
-    - Ensure the power plan selected by the user is assigned.
-    - Ensure Windows updates are selected by the user installed.
-    - Ensures mouse acceleration is disabled.
+    - Set the hostname selected by the user is assigned.
+    - Configure remote desktop services.
+    - Set the sound scheme to 'No sounds'.
+    - Set the power plan selected by the user.
+    - Install Windows updates categories selected by the user.
+    - Disable mouse acceleration.
 - **Terminal Settings**
-  - Ensures [oh-my-posh](https://ohmyposh.dev/) with the theme chosen by the user is set as a default PowerShell theme engine.
+  - Install [oh-my-posh](https://ohmyposh.dev/) with the theme chosen by the user and it set as a default PowerShell theme engine.
 
 ## Installation
 

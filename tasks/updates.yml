@@ -3,7 +3,7 @@
   ansible.windows.win_updates:
     state: searched
 
-- name: Ensure Windows updates installed.
+- name: Install Windows updates.
   ansible.windows.win_updates:
     category_names: "{{ update_categories | default(omit) }}"
     reboot: "{{ windows_updates_reboot | default(false) }}"

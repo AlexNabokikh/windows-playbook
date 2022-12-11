@@ -1,5 +1,5 @@
 ---
-- name: Ensure Explorer's default layout and view set to 'List'.
+- name: Set Explorer's default layout and view to 'List'.
   ansible.windows.win_regedit:
     path: >
       HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams\Defaults
@@ -41,28 +41,28 @@
       00,00,00,00,00
     type: binary
 
-- name: Ensure Explorer includes the file extension in file names.
+- name: Enable the file extension in file names.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
     name: HideFileExt
     data: 0
     type: dword
 
-- name: Ensure Explorer open itself to the Computer view.
+- name: Set Explorer to the Computer view.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
     name: LaunchTo
     data: 1
     type: dword
 
-- name: Ensure Ribbon menu is disabled in Windows Explorer.
+- name: Disable Ribbon menu in Windows Explorer.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Ribbon
     name: MinimizedStateTabletModeOff
     data: 1
     type: dword
 
-- name: Ensure Right-click Context Menu enabled.
+- name: Enable Right-click Context Menu.
   ansible.windows.win_regedit:
     path: >
       HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32
