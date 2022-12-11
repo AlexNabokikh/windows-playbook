@@ -195,6 +195,8 @@ Packages (installed with Chocolatey):
 | remove_desktop_icons       | (Optional) Whether or not remove desktop icons (\*.lnk files only).                                              | `bool`       | `false`                                                                                                                            |
 | defrag_volumes             | (Optional) Whether or not to perform disk defragmentation.                                                       | `bool`       | `true`                                                                                                                             |
 | include_volumes            | (Optional) A list of volumes to be defragmented.                                                                 | `list`       | `["C"]`                                                                                                                            |
+| change_power_plan          | (Optional) Whether or not change Power Plan.                                                                     | `bool`       | `true`                                                                                                                             |
+| power_plan                 | (Optional) Choose a power plan (high_performance, balanced, power_saver).                                        | `string`     | `high_performance`                                                                                                                 |
 
 ## Author
 

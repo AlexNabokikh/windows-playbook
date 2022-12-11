@@ -27,7 +27,10 @@ update_categories:
   # - Upgrades
 
 change_power_plan: true
-power_plan: "high performance"
+# high_performance
+# balanced
+# power_saver
+power_plan: "high_performance"
 
 choco_installed_packages:
   # installs 2019.2.2.20191 version of the adobe reader
