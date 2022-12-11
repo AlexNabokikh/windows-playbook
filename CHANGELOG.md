@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.14.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.14.0...v1.14.1) (2022-12-11)
+
+
+### Bug Fixes
+
+* **wsl2:** fixed task name ([1fc7ce1](https://github.com/AlexNabokikh/windows-playbook/commit/1fc7ce1558708bed417bed1c1071a2326395a8d5))
+
 ## [1.14.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.13.1...v1.14.0) (2022-09-03)
 
 
