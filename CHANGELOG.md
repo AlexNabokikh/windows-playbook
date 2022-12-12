@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.15.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.14.1...v1.15.0) (2022-12-12)
+
+
+### Features
+
+* change task names wording ([99a3dce](https://github.com/AlexNabokikh/windows-playbook/commit/99a3dceaca22dc2960ffc3a136ede86dcf74a087))
+* **power_plan:** ensure the plan set correctly even if system language is not english ([10a36cb](https://github.com/AlexNabokikh/windows-playbook/commit/10a36cb857b18da47a6d1d031b32e2f809bdaae1))
+* **winget:** introduced winget package installation task ([098186c](https://github.com/AlexNabokikh/windows-playbook/commit/098186c1e89e257a3fc59ca867942257e742a07b))
+
+
+### Bug Fixes
+
+* **license:** fixed license date ([bf4e847](https://github.com/AlexNabokikh/windows-playbook/commit/bf4e847ba26a943266d958965057feee992a2cb0))
+
 ## [1.14.1](https://github.com/AlexNabokikh/windows-playbook/compare/v1.14.0...v1.14.1) (2022-12-11)
 
 
