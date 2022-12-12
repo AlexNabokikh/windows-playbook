@@ -26,7 +26,8 @@ This playbook installs and configures most of the software I use on my Windows 1
 
 - **Software**
   - Remove Bloatware (see default config for a complete list of Bloatware).
-  - Install software and packages via Chocolatey selected by the user.
+  - Install software and packages selected by the user via Chocolatey.
+  - Install software and packages selected by the user via WinGet.
 - **Windows apps & features**
   - Install and Enable Optional Windows Features chosen by the user.
   - Install and Enable the WSL2 distro selected by the user.
@@ -91,7 +92,7 @@ powershell.exe -ExecutionPolicy ByPass -File $file -Verbose
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `power` , `sounds` , `start_menu` , `taskbar` , `updates` , `windows_features` , `wsl` .
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook` `--tags` flag. The tags available are `choco` , `debloat` , `desktop` , `explorer` , `fonts` , `hostname` , `mouse` , `power` , `sounds` , `start_menu` , `taskbar` , `updates` , `windows_features` , `wsl`, `winget`.
 
 ```sh
 ansible-playbook main.yml --tags "choco,wsl"
@@ -197,6 +198,9 @@ Packages (installed with Chocolatey):
 | include_volumes            | (Optional) A list of volumes to be defragmented.                                                                 | `list`       | `["C"]`                                                                                                                            |
 | change_power_plan          | (Optional) Whether or not change Power Plan.                                                                     | `bool`       | `true`                                                                                                                             |
 | power_plan                 | (Optional) Choose a power plan (high_performance, balanced, power_saver).                                        | `string`     | `high_performance`                                                                                                                 |
+| winget_packages            | (Required) A list of WinGet packages to be installed.                                                            | `list`       |                                                                                                                                    |
+| name (WinGet)              | (Required) A name of the WinGet package to be installed.                                                         | `string`     |                                                                                                                                    |
+| source (WinGet)            | (Optional) The source of the WinGet package (`msstore` or `winget`).                                             | `string`     |                                                                                                                                    |
 
 ## Author
 
