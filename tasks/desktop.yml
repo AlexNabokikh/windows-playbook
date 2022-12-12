@@ -14,7 +14,7 @@
     patterns: "*.lnk"
   register: shortcuts
 
-- name: Ensure shortcuts are removed.
+- name: Remove shortcuts from the Desktop.
   ansible.windows.win_file:
     path: "{{ item.path }}"
     state: absent

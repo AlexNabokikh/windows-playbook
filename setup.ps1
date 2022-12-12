@@ -1,4 +1,4 @@
-# Ensure PowerShell execution policy is set to RemoteSigned for the current user
+# Set PowerShell execution policy to RemoteSigned for the current user
 $ExecutionPolicy = Get-ExecutionPolicy -Scope CurrentUser
 if ($ExecutionPolicy -eq "RemoteSigned") {
     Write-Verbose "Execution policy is already set to RemoteSigned for the current user, skipping..." -Verbose
@@ -8,7 +8,7 @@ else {
     Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 }
 
-# Ensure chocolatey installed
+# Install chocolatey
 if ([bool](Get-Command -Name 'choco' -ErrorAction SilentlyContinue)) {
     Write-Verbose "Chocolatey is already installed, skip installation." -Verbose
 }
@@ -17,7 +17,7 @@ else {
     Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
-# Ensure OpenSSH Server installed
+# Install OpenSSH Server
 if ([bool](Get-Service -Name sshd -ErrorAction SilentlyContinue)) {
     Write-Verbose "OpenSSH is already installed, skip installation." -Verbose
 }

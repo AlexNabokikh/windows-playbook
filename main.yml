@@ -27,6 +27,9 @@
     - import_tasks: tasks/chocolatey.yml
       tags: ["choco"]
 
+    - import_tasks: tasks/winget.yml
+      tags: ["winget"]
+
     - import_tasks: tasks/windows_features.yml
       when: install_windows_features
       tags: ["windows_features"]

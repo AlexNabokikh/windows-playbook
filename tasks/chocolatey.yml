@@ -1,5 +1,5 @@
 ---
-- name: Ensure configured Chocolatey packages are installed.
+- name: Install Chocolatey packages.
   chocolatey.chocolatey.win_chocolatey:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
@@ -9,7 +9,7 @@
 
 - name: Clean chocolatey and nuget cache.
   block:
-    - name: Ensure the chocolatey and NuGet cache is cleaned.
+    - name: Clean up the chocolatey and NuGet cache.
       ansible.windows.win_file:
         path: "{{ item }}"
         state: absent

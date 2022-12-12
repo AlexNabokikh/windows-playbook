@@ -1,12 +1,12 @@
 ---
-- name: Ensure 'Search' unpinned from Taskbar.
+- name: Unpin 'Search' from Taskbar.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Search
     name: SearchboxTaskbarMode
     data: 0
     type: dword
 
-- name: Ensure Task View, Chat and Cortana are unpinned from Taskbar.
+- name: Unpin Task View, Chat and Cortana from Taskbar.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
     name: "{{ item }}"
@@ -18,7 +18,7 @@
     - TaskbarDa
     - TaskbarMn
 
-- name: Ensure 'News and Interests' unpinned from Taskbar.
+- name: Unpin 'News and Interests' from Taskbar.
   ansible.windows.win_regedit:
     path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds
     name: EnableFeeds
@@ -26,14 +26,14 @@
     type: dword
     state: present
 
-- name: Ensure 'People' unpinned from Taskbar.
+- name: Unpin 'People' from Taskbar.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People
     name: PeopleBand
     data: 0
     type: dword
 
-- name: Ensure 'Edge', 'Store' other built-in shortcuts unpinned from Taskbar.
+- name: Unpin 'Edge', 'Store' other built-in shortcuts from Taskbar.
   ansible.windows.win_regedit:
     path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband
     name: Favorites

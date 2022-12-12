@@ -1,5 +1,5 @@
 ---
-- name: Ensure sound scheme set to 'No sounds'.
+- name: Set sound scheme to 'No sounds'.
   ansible.windows.win_powershell:
     script: |
       $Path = "HKCU:\AppEvents\Schemes"
