@@ -115,6 +115,12 @@
       when: remove_desktop_icons
       tags: ["desktop"]
 
+    - name: Include storage sense configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/storage.yml
+      when: configure_storage_sense
+      tags: ["storage_sense"]
+
     - name: Include defrag configuration.
       ansible.builtin.import_tasks:
         file: tasks/defrag.yml

@@ -1,0 +1,20 @@
+---
+- name: Set Storage Sense configuration.
+  ansible.windows.win_regedit:
+    path: HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    type: dword
+    state: present
+  loop:
+    - { name: "01", value: "{{ storage_sense.enabled | ternary(1, 0) }}" }
+    - { name: "2048", value: "{{ storage_sense.run_frequency }}" }
+    - { name: "04", value: "{{ storage_sense.delete_unused_files | ternary(0, 1) }}", }
+    - { name: "08", value: "{{ storage_sense.delete_recycle_bin_files | ternary(1, 0) }}", }
+    - { name: "256", value: "{{ storage_sense.recycle_bin_age }}" }
+    - { name: "32", value: "{{ storage_sense.delete_downloads_files | ternary(1, 0) }}", }
+    - { name: "512", value: "{{ storage_sense.downloads_age }}" }
+  when:
+    - item.name == "2048" and storage_sense.run_frequency in [1, 7, 30]
+    - item.name == "256" and storage_sense.recycle_bin_age in [1, 14, 30, 60]
+    - item.name == "512" and storage_sense.downloads_age in [1, 14, 30, 60]
