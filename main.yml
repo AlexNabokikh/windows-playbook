@@ -1,83 +1,122 @@
 ---
-- hosts: all
+- name: Windows Playbook
+  hosts: all
 
   vars_files:
     - default.config.yml
 
   pre_tasks:
-    - name: Include playbook configuration.
-      include_vars: "{{ item }}"
+    - name: Include playbook user configuration.
+      ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ["always"]
 
   tasks:
-    - import_tasks: tasks/hostname.yml
+    - name: Include hostname configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/hostname.yml
       when: configure_hostname
       tags: ["hostname"]
 
-    - import_tasks: tasks/updates.yml
+    - name: Include windows updates configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/updates.yml
       when: install_windows_updates
       tags: ["updates"]
 
-    - import_tasks: tasks/debloat.yml
+    - name: Include debloat configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/debloat.yml
       when: remove_bloatware
       tags: ["debloat"]
 
-    - import_tasks: tasks/chocolatey.yml
+    - name: Include chocolatey configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/chocolatey.yml
+      when: install_chocolatey_packages
       tags: ["choco"]
 
-    - import_tasks: tasks/winget.yml
+    - name: Include winget configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/winget.yml
+      when: install_winget_packages
       tags: ["winget"]
 
-    - import_tasks: tasks/windows_features.yml
+    - name: Include windows features configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/windows_features.yml
       when: install_windows_features
       tags: ["windows_features"]
 
-    - import_tasks: tasks/wsl2.yml
+    - name: Include wsl2 configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/wsl2.yml
       when: install_wsl2
       tags: ["wsl"]
 
-    - import_tasks: tasks/fonts.yml
+    - name: Include fonts configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/fonts.yml
       when: install_fonts
       tags: ["fonts"]
 
-    - import_tasks: tasks/ohmyposh.yml
+    - name: Include ohmyposh configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/ohmyposh.yml
       when: install_ohmyposh
       tags: ["ohmyposh"]
 
-    - import_tasks: tasks/explorer.yml
+    - name: Include explorer configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/explorer.yml
       when: configure_explorer
       tags: ["explorer"]
 
-    - import_tasks: tasks/taskbar.yml
+    - name: Include taskbar configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/taskbar.yml
       when: configure_taskbar
       tags: ["taskbar"]
 
-    - import_tasks: tasks/start_menu.yml
+    - name: Include start menu configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/start_menu.yml
       when: configure_start_menu
       tags: ["start_menu"]
 
-    - import_tasks: tasks/sounds.yml
+    - name: Include sounds configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/sounds.yml
       when: set_sound_scheme
       tags: ["sounds"]
 
-    - import_tasks: tasks/mouse.yml
+    - name: Include mouse configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/mouse.yml
       when: disable_mouse_acceleration
       tags: ["mouse"]
 
-    - import_tasks: tasks/power_plan.yml
+    - name: Include power plan configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/power_plan.yml
       when: change_power_plan
       tags: ["power"]
 
-    - import_tasks: tasks/remote_desktop.yml
+    - name: Include remote desktop configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/remote_desktop.yml
       when: remote_desktop_enabled
       tags: ["remote_desktop"]
 
-    - import_tasks: tasks/desktop.yml
+    - name: Include desktop configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/desktop.yml
       when: remove_desktop_icons
       tags: ["desktop"]
 
-    - import_tasks: tasks/defrag.yml
+    - name: Include defrag configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/defrag.yml
       when: defrag_volumes
       tags: ["defrag"]
