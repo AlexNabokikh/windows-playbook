@@ -3,7 +3,7 @@
   ansible.windows.win_regedit:
     path: "{{ item }}"
     name: fDenyTSConnections
-    data: 00000000
+    data: 0x00000000
     type: dword
     state: "{{ 'present' if remote_desktop_enabled else 'absent' }}"
   with_items:
