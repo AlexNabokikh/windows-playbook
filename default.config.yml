@@ -32,6 +32,7 @@ change_power_plan: true
 # power_saver
 power_plan: "high_performance"
 
+install_chocolatey_packages: true
 choco_installed_packages:
   # installs 2019.2.2.20191 version of the adobe reader
   - name: adobereader
@@ -58,6 +59,7 @@ choco_installed_packages:
   - vscode
   - zoom
 
+install_winget_packages: true
 winget_packages:
   # - name: "Auto Dark Mode"
   #   source: winget
