@@ -133,6 +133,16 @@ bloatware:
   - Microsoft.ZuneVideo
   - MicrosoftTeams
 
+configure_storage_sense: true
+storage_sense:
+  enabled: true
+  run_frequency: 1
+  delete_unused_files: true
+  delete_recycle_bin_files: true
+  recycle_bin_age: 14
+  delete_downloads_files: true
+  downloads_age: 14
+
 defrag_volumes: true
 include_volumes:
   - C
