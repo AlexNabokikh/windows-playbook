@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.15.0...v2.0.0) (2023-03-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* **main.yml:** chocolatey and winget packages installation are now
+optional. Please make changes in your configs accordingly.
+
+### Features
+
+* **storage:** added a task that enables storage sense ([cd9d5b1](https://github.com/AlexNabokikh/windows-playbook/commit/cd9d5b1592b617c663eb2093a5453edcbc55e969))
+
+
+### Bug Fixes
+
+* **deps:** bumped pipeline dependecies ([0b46840](https://github.com/AlexNabokikh/windows-playbook/commit/0b46840e6e33ae8ae2199eadb794cba2aa2eaa06))
+* **remote_desktop:** forbidden implicit octal value ([edcfc54](https://github.com/AlexNabokikh/windows-playbook/commit/edcfc54e367558f4a917ba2ccf7b8766ab972a58))
+* **storage:** too many spaces inside braces ([9dd1d15](https://github.com/AlexNabokikh/windows-playbook/commit/9dd1d15de3b5b47cc837c9b0581fda697b303f1e))
+
+
+### Miscellaneous Chores
+
+* **main.yml:** revorked playbook entrypoint ([f833db7](https://github.com/AlexNabokikh/windows-playbook/commit/f833db70a231cf4d04ed7cfd2819448a58af9b33))
+
 ## [1.15.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.14.1...v1.15.0) (2022-12-12)
 
 
