@@ -6,7 +6,7 @@
     data: 0x00000000
     type: dword
     state: "{{ 'present' if remote_desktop_enabled else 'absent' }}"
-  with_items:
+  loop:
     - "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\"
     - "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services"
 
