@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.1](https://github.com/AlexNabokikh/windows-playbook/compare/v2.0.0...v2.0.1) (2023-04-01)
+
+
+### Bug Fixes
+
+* **storage_sense:** fixed incorrect when conditions ([03e518f](https://github.com/AlexNabokikh/windows-playbook/commit/03e518f9511c1534754c6d8b933f3fedc6d93f33))
+
 ## [2.0.0](https://github.com/AlexNabokikh/windows-playbook/compare/v1.15.0...v2.0.0) (2023-03-31)
 
 
